@@ -1,0 +1,302 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="description" content="Development Marketplace app store, browser programs for android, linux and MacOS.">
+<meta name="keywords" content="DevelopmentMarketplace, app store, play store, development, release apps, publish apps, post apps, download apps, download programs">
+<meta name="author" content="DivineSoftware">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body{
+    background-color:black;
+    font-family: Verdana,sans-serif;
+    font-size: 15px;
+    background-color: #24292e;
+    color: #bdc1c6;
+}
+::-webkit-scrollbar {
+  width: 3px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: black;
+}
+::-webkit-scrollbar-thumb {
+  background: white;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: grey;
+}
+.size_small{
+color:#999999;
+   white-space: pre-wrap;      /* CSS3 */   
+   white-space: -moz-pre-wrap; /* Firefox */    
+   white-space: -pre-wrap;     /* Opera <7 */   
+   white-space: -o-pre-wrap;   /* Opera 7 */    
+   word-wrap: break-word;      /* IE */
+}
+.highlight{
+   white-space: pre-wrap;      /* CSS3 */   
+   white-space: -moz-pre-wrap; /* Firefox */    
+   white-space: -pre-wrap;     /* Opera <7 */   
+   white-space: -o-pre-wrap;   /* Opera 7 */    
+   word-wrap: break-word;      /* IE */
+text-shadow:
+ 0px -2px 10px green,
+ 0px -2px 10px green,
+ 0px -10px 20px green,
+ 0px -20px 40px green;
+
+}
+.size_large{
+color:#33db27;
+text-decoration:none;
+size:0.5em;
+}
+.container{
+    background-color: #2f363d;
+    padding: 5px 15px 1px;
+    border-radius: 6px;
+    margin-bottom: 22px;
+    box-sizing: inherit;
+    width: 851px;
+}
+.tag {
+    display: inline-block;
+    margin: 0;
+    font-weight: 500;
+    font-family: inherit;
+    line-height: inherit;
+    text-align: center;
+    text-decoration: none;
+    border: 0;
+    border-radius: 6px;
+    appearance: none;
+    color: #bebebe;
+    background-color: #24292e;
+    box-shadow: inset 0 0 0 1px var(--theme-ui-colors-border,#444d56);
+    padding: 4px 6px;
+    font-size: 12px;
+    cursor: pointer;
+}
+.search {
+    border: 0;
+    border-radius: 6px;
+    appearance: none;
+    color: #bebebe;
+    background-color: #24292e;
+    box-shadow: inset 0 0 0 1px var(--theme-ui-colors-border,#444d56);
+    padding: 4px 6px;
+    font-size: 12px;
+    /*cursor: pointer;*/
+}
+a{
+color:white;
+}
+.chrome {
+  background: #222 -webkit-gradient(linear, left top, right top, from(#222), to(#222), color-stop(0.5, #fff)) 0 0 no-repeat;
+  background-image: -webkit-linear-gradient(-40deg, transparent 0%, transparent 40%, #fff 50%, transparent 60%, transparent 100%);
+  -webkit-background-size: 200px;
+  color: rgba(255, 255, 255, 0.3);
+  -webkit-background-clip: text;
+  -webkit-animation-name: shine;
+  -webkit-animation-duration: 5s;
+  -webkit-animation-iteration-count: infinite;
+  text-shadow:
+ /*0px -2px 4px green;*/ /*text color*/
+ 0px -2px 10px green, 0px -2px 10px green, /*round glow*/
+ 0px -10px 20px green, /*back shine*/
+ 0px -20px 40px green;
+}
+@-webkit-keyframes shine {
+  0%, 10% {
+    background-position: -1000px;
+  }
+  20% {
+    background-position: top left;
+  }
+  90% {
+    background-position: top right;
+  }
+  100% {
+    background-position: 1000px;
+  }
+}
+h3{
+text-shadow:
+ 0px -2px 10px red, 0px -2px 10px green,
+ 0px -10px 20px green,
+ 0px -20px 40px green; 
+}
+button{
+border-radius:20px;
+background-color: green;
+}
+.products{
+    /*margin-top: 80px;
+    margin-left: 350px;
+    max-width: 820px;*/
+    box-sizing: inherit;
+    display: flex;
+    flex-wrap: wrap;
+}
+.frame:hover{
+opacity:0.9;
+}
+footer {
+  text-align: center;
+  padding: 3px;
+  background-color: #2f363d;
+  color: white;
+  position: absolute;
+  left: 0;
+  height: 100px;
+  width: 100%;
+  overflow: hidden;
+}
+</style>
+</head>
+<body>
+<noscript>
+Please enable javascript on this site to see its content
+</noscript>
+<h1 class="chrome"><img src="logo.png"> Development Marketplace</h1>
+<div id="installBtn" style="cursor:pointer;display:none">
+<button>Add to desktop</button>
+<br>
+</div>
+<br>
+<input id="appSearch" class="search" type="text" placeholder="Search for apps..."
+   onchange   = "searchApps();"
+   onkeypress = "this.onchange();"
+   onpaste    = "this.onchange();"
+   oninput    = "this.onchange();"><p />
+<span id="tagList" style="display:none">Tags </span>
+<div class="products">
+</div>
+<footer>
+  <p>© DivineSoftware<br>
+  <a href="https://github.com/DivineSoftware/DevelopmentMarketplace/issues">Report malware</a></p>
+</footer>
+<script>
+window.addEventListener("beforeinstallprompt", (beforeInstallPromptEvent) => {
+  beforeInstallPromptEvent.preventDefault();
+  document.getElementById("installBtn").style.display = "block";
+  document.getElementById("installBtn").addEventListener("click", (mouseEvent) => {
+    beforeInstallPromptEvent.prompt();
+  });
+});
+function blinkBg() {
+    var element = document.body;
+    var blink = "#000000";
+    var bgcolor = 'rgb(36, 41, 46)';
+    if (element.style.backgroundColor === '' || element.style.backgroundColor === bgcolor){
+    element.style.backgroundColor = blink;
+    window.setTimeout(blinkBg,500);
+    }else{
+    element.style.backgroundColor = bgcolor;
+    }
+}
+function searchApps() {
+    var containers = document.getElementsByClassName("container");
+    for (var i = 0; i < containers.length; i++) {
+      if (!containers[i].innerHTML.includes(document.getElementById("appSearch").value))
+      {
+        containers[i].style.display = "none";
+      }else{
+        containers[i].style.display = "block";
+      }
+    }
+}
+function httpGet(theUrl) {
+  let xmlHttpReq = new XMLHttpRequest();
+  xmlHttpReq.open("GET", theUrl, false); 
+  xmlHttpReq.send(null);
+  return xmlHttpReq.responseText;
+}
+var files = JSON.parse(httpGet("https://api.github.com/repos/divinesoftware/DevelopmentMarketplace/git/trees/main?recursive=1"))["tree"];
+files.forEach(function(value, index) {
+  if (value["path"].includes("store/apps/"))
+  {
+      var info = JSON.parse(httpGet("https://raw.githubusercontent.com/DivineSoftware/DevelopmentMarketplace/main/"+value["path"]));
+      var main_class = document.createElement("div");
+      main_class.className = "container";
+      var text_name = document.createElement("a");
+      var image = document.createElement("img");
+      var icon = document.createElement("img");
+      text_name.className = "size_large";
+      text_name.href = info["source"];
+      try{
+          icon.src = info["icon"];
+          icon.style.width = "50px";
+          icon.style.height = "50px";
+          text_name.innerHTML = icon.outerHTML + " " + info["name"]+" by "+info["author"];
+      }catch{
+          text_name.innerHTML = info["name"]+" by "+info["author"];
+      }
+      var text_desc = document.createElement("b");
+      text_desc.className = "size_small";
+      text_desc.innerHTML = info["description"];
+      var text_support = document.createElement("span");
+      text_support.className = "size_small";
+      text_support.innerHTML = "Support: "+info["support"].toString();
+      var text_link = document.createElement("span");
+      text_link.className = "highlight";
+      text_link.innerHTML = "Download: <a href='" + info["build"] + "'>" + info["build"] + "</a>";
+      try{
+          image.src = info["image"];
+          image.style.width = "850px";
+          main_class.appendChild(document.createElement("br"));
+          main_class.appendChild(image);
+          main_class.appendChild(document.createElement("br"));
+      }catch{}      
+      main_class.appendChild(text_name);
+      main_class.appendChild(document.createElement("br"));
+
+      info["tags"].forEach(function(tag_value, index) {
+          var tag_text = document.createElement("span");
+          tag_text.innerHTML = tag_value;
+          tag_text.className = "tag";
+          tag_text.onclick = function(){
+              document.getElementById("tagList").style.display = "block";
+              if (!document.getElementById("tagList").innerHTML.includes(tag_text.innerHTML)) {
+                  var containers = document.getElementsByClassName("container");
+                  for (var i = 0; i < containers.length; i++) {
+                    if (!containers[i].innerHTML.toLowerCase().includes(tag_value.toLowerCase()))
+                    {
+                      containers[i].style.display = "none";
+                    }
+                  }
+                  document.getElementById("tagList").appendChild(tag_text); //ToDo: .insertAdjacentHTML('beforeend', "<span class='tag'>"+tag_value+"</span>");
+                  //blinkBg();
+              }else{
+                  var containers = document.getElementsByClassName("container");
+                  for (var i = 0; i < containers.length; i++) {
+                    if (!containers[i].innerHTML.toLowerCase().includes(tag_value.toLowerCase()))
+                    {
+                      containers[i].style.display = "block";
+                    }
+                  }
+                  document.getElementById("tagList").removeChild(tag_text);
+                  //blinkBg();
+              }
+          };
+          main_class.appendChild(tag_text);
+      });
+
+      main_class.appendChild(document.createElement("br"));
+      main_class.appendChild(text_desc);
+      main_class.appendChild(document.createElement("br"));
+      main_class.appendChild(text_support);
+      main_class.appendChild(document.createElement("br"));
+      main_class.appendChild(text_link);
+      main_class.appendChild(document.createElement("br"));
+      main_class.appendChild(document.createElement("br"));
+      document.getElementsByClassName("products")[0].appendChild(main_class);
+      var divider = document.createElement("p");
+      divider.style.width = "25px";
+      document.getElementsByClassName("products")[0].appendChild(divider);
+  }    
+});
+</script>
+</body>
+<html>
