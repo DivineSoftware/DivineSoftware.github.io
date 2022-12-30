@@ -1,0 +1,100 @@
+<html>
+<head>
+<link   rel="preconnect" href="https://fonts.gstatic.com"/>
+<link   rel="stylesheet" type="text/css" href="style.css"/>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Tips for writing clean and readable python code.">
+<meta name="keywords" content="Python, programming, coding in python, writing readable code, readable, clean, code, programming tips, python tips">
+<title>Best practices for python programming</title>
+</head>
+<body id="bodytext">
+<center style="color:white"><b>
+<b>Be</b>st <b>ti</b>ps <b>an</b>d <b>prac</b>tices <b>fo</b>r <b>writ</b>ing <b>cl</b>ean <b>pyt</b>hon <b>co</b>de
+</b></center>
+<center><iframe data-aa='2022514' src='//ad.a-ads.com/2022514?size=728x90' style='width:728px; height:90px; border:0px; padding:0; overflow:hidden; background-color: transparent;'></iframe></center>
+<p>
+<br>
+<br>
+<b>Wh</b>en <b>devel</b>oping a <b>soft</b>ware <b>applic</b>ation <b>th</b>at <b>touc</b>hes <b>th</b>e <b>ed</b>ge <b>o</b>f <b>hu</b>man <b>perce</b>ption <b>(i</b>e. a <b>ga</b>me <b>th</b>at <b>ca</b>n <b>ge</b>t <b>10</b>0 <b>mill</b>ions <b>hi</b>ts <b>ev</b>ery <b>da</b>y, <b>o</b>r a <b>Face</b>book <b>pa</b>ge <b>th</b>at <b>i</b>s <b>ab</b>le <b>t</b>o <b>ma</b>ke <b>peo</b>ple <b>happ</b>y), <b>you</b>’re <b>prob</b>ably <b>writ</b>ing <b>fr</b>om <b>scra</b>tch <b>i</b>n <b>pyth</b>on. <b>S</b>o a <b>go</b>od <b>pa</b>rt <b>o</b>f <b>yo</b>ur <b>develo</b>pment <b>proc</b>ess <b>sho</b>uld <b>b</b>e <b>focu</b>sed <b>i</b>n <b>te</b>rms <b>o</b>f <b>avoi</b>ding <b>unnece</b>ssary <b>co</b>de <b>bl</b>oat <b>a</b>s <b>i</b>s <b>com</b>mon <b>i</b>n <b>Ja</b>va <b>an</b>d C <b>(i</b>e. <b>tr</b>y <b>t</b>o <b>ke</b>ep <b>th</b>e <b>co</b>de <b>a</b>s <b>read</b>able <b>a</b>s <b>poss</b>ible <b>an</b>d <b>main</b>tain a <b>well-f</b>actored <b>struc</b>ture, <b>th</b>at <b>does</b>n’t <b>incl</b>ude <b>vari</b>ables <b>th</b>at <b>ar</b>e <b>us</b>ed <b>twic</b>e).<br>
+<br>
+<b>T</b>o <b>prev</b>ent <b>su</b>ch <b>bl</b>oat <b>i</b>n <b>pyth</b>on, <b>le</b>t’s <b>lo</b>ok <b>t</b>o a <b>fe</b>w <b>be</b>st <b>prac</b>tices <b>th</b>at <b>yo</b>u <b>ca</b>n <b>fol</b>low <b>wh</b>en <b>writ</b>ing <b>yo</b>ur <b>co</b>de.<br>
+<br>
+<b>Av</b>oid <b>unu</b>sed <b>vari</b>ables<br>
+<br>
+<b>Us</b>ing <b>vari</b>ables <b>a</b>t <b>th</b>e <b>fi</b>rst <b>pl</b>ace <b>wi</b>ll <b>quic</b>kly <b>bec</b>ome <b>counterp</b>roductive – <b>an</b>d <b>th</b>e <b>ri</b>sk <b>o</b>f <b>th</b>is <b>be</b>ing a <b>perfor</b>mance <b>crit</b>ical <b>po</b>int <b>fo</b>r <b>yo</b>ur <b>applic</b>ation <b>wi</b>ll <b>alw</b>ays <b>b</b>e <b>the</b>re, <b>a</b>s <b>yo</b>u <b>wo</b>n’t <b>b</b>e <b>ab</b>le <b>t</b>o <b>av</b>oid <b>th</b>em <b>i</b>n <b>ti</b>me. <b>Bu</b>t <b>i</b>n <b>th</b>e <b>ca</b>se <b>o</b>f <b>varia</b>bles, <b>ju</b>st <b>ab</b>out <b>every</b>thing <b>i</b>s <b>allo</b>wed – <b>an</b>d <b>th</b>is <b>incl</b>udes <b>non-pr</b>imitive <b>(read-</b>only) <b>varia</b>bles. <b>Al</b>so, <b>pyt</b>hon <b>does</b>n’t <b>ha</b>ve a <b>“sta</b>tic” <b>const</b>ruct, <b>s</b>o <b>yo</b>u <b>do</b>n’t <b>ne</b>ed <b>t</b>o <b>us</b>e <b>glo</b>bal <b>vari</b>ables <b>a</b>s <b>we</b>ll.<br>
+<br>
+<b>Av</b>oid <b>unnece</b>ssary <b>compl</b>exity<br>
+<br>
+<b>A</b>s a <b>pu</b>re <b>pyt</b>hon <b>devel</b>oper, <b>yo</b>ur <b>co</b>de <b>i</b>s <b>alw</b>ays <b>go</b>ing <b>t</b>o <b>requ</b>ire <b>so</b>me <b>mo</b>re <b>thou</b>ght <b>th</b>an a <b>C/</b>C++ <b>devel</b>oper, <b>a</b>s <b>we</b>ll <b>a</b>s a <b>mo</b>re <b>rigo</b>rous <b>st</b>yle <b>fo</b>r <b>yo</b>ur <b>co</b>de – <b>an</b>d <b>you</b>’re <b>go</b>ing <b>t</b>o <b>ne</b>ed <b>th</b>e <b>corr</b>ect <b>to</b>ols <b>t</b>o <b>accom</b>plish <b>th</b>is.<br>
+<br>
+<b>Th</b>ere <b>ar</b>e <b>wa</b>ys <b>t</b>o <b>mini</b>mize <b>th</b>e <b>amo</b>unt <b>o</b>f <b>compl</b>exity <b>i</b>n <b>pyt</b>hon <b>co</b>de. <b>Th</b>e <b>mo</b>st <b>impo</b>rtant <b>i</b>s <b>t</b>o <b>cre</b>ate a <b>ba</b>sic <b>stru</b>cture <b>wi</b>th a <b>well-t</b>hought <b>ou</b>t <b>func</b>tion <b>fo</b>r <b>ea</b>ch <b>st</b>ep <b>i</b>n <b>yo</b>ur <b>develo</b>pment <b>proc</b>ess. <b>Fo</b>r <b>exam</b>ple, <b>yo</b>u <b>ca</b>n <b>wr</b>ite a <b>ba</b>sic <b>func</b>tion <b>t</b>o <b>incr</b>ement a <b>stri</b>ng, <b>th</b>at <b>ca</b>n <b>he</b>lp <b>yo</b>u <b>eas</b>ily <b>mo</b>ve <b>fr</b>om <b>on</b>e <b>li</b>ne <b>t</b>o <b>anot</b>her <b>depe</b>nding <b>o</b>n <b>th</b>e <b>situa</b>tion. <b>Th</b>is <b>stru</b>cture <b>i</b>s <b>ve</b>ry <b>read</b>able, <b>bu</b>t <b>al</b>so <b>ve</b>ry <b>effi</b>cient <b>wh</b>en <b>yo</b>u <b>co</b>me <b>t</b>o <b>cha</b>nge <b>th</b>e <b>func</b>tion <b>co</b>de <b>with</b>out <b>chan</b>ging <b>seve</b>ral <b>li</b>nes <b>th</b>at <b>ar</b>e <b>alre</b>ady <b>the</b>re, <b>b</b>y <b>defi</b>ning a <b>fe</b>w <b>keyw</b>ords <b>th</b>at <b>he</b>lp <b>yo</b>u <b>i</b>n <b>th</b>is <b>proc</b>ess.<br>
+<br>
+<b>Th</b>e <b>adva</b>ntage <b>o</b>f <b>su</b>ch <b>struc</b>tured <b>co</b>de <b>i</b>s <b>th</b>e <b>readab</b>ility <b>wh</b>en <b>writ</b>ing <b>o</b>r <b>refact</b>oring <b>it</b>, <b>an</b>d <b>th</b>e <b>brev</b>ity <b>o</b>f <b>yo</b>ur <b>co</b>de. <b>Th</b>e <b>disadv</b>antage <b>co</b>mes <b>a</b>s a <b>res</b>ult <b>o</b>f <b>yo</b>ur <b>co</b>de <b>comple</b>xity, <b>an</b>d <b>ho</b>w <b>mu</b>ch <b>i</b>t <b>depe</b>nds <b>o</b>n <b>yo</b>ur <b>ti</b>me, <b>ski</b>lls <b>an</b>d <b>experi</b>ence.<br>
+<br>
+<b>Sepa</b>rate <b>co</b>de <b>pa</b>rts<br>
+<br>
+<b>Yo</b>u <b>ca</b>n <b>sepa</b>rate <b>yo</b>ur <b>co</b>de <b>in</b>to <b>mult</b>iple <b>ma</b>in <b>chun</b>ks, <b>wh</b>ich <b>wi</b>ll <b>grea</b>tly <b>he</b>lp <b>yo</b>u <b>i</b>n <b>gett</b>ing <b>yo</b>ur <b>“b</b>ig <b>pict</b>ure” <b>appr</b>oach <b>i</b>n <b>mi</b>nd <b>dur</b>ing <b>yo</b>ur <b>codi</b>ng, <b>an</b>d <b>wi</b>ll <b>al</b>so <b>he</b>lp <b>i</b>n <b>keep</b>ing <b>yo</b>ur <b>co</b>de <b>mo</b>re <b>read</b>able <b>a</b>s <b>yo</b>u <b>mo</b>ve <b>fr</b>om <b>on</b>e <b>pi</b>ece <b>o</b>f <b>co</b>de <b>t</b>o <b>th</b>e <b>ne</b>xt.<br>
+<br>
+<b>Separ</b>ating <b>th</b>e <b>co</b>de <b>i</b>s <b>al</b>so <b>ve</b>ry <b>impo</b>rtant <b>i</b>n <b>progra</b>mming, <b>a</b>s <b>i</b>t <b>fr</b>ees <b>yo</b>u <b>fr</b>om <b>hav</b>ing <b>t</b>o <b>wr</b>ite <b>th</b>e <b>co</b>de <b>t</b>o <b>ma</b>ke <b>ea</b>ch <b>assig</b>nment <b>wo</b>rk <b>th</b>e <b>wa</b>y <b>yo</b>u <b>th</b>ink <b>be</b>st. <b>T</b>o <b>sepa</b>rate <b>th</b>e <b>co</b>de <b>par</b>ts, <b>us</b>e <b>func</b>tions <b>o</b>r <b>clas</b>ses <b>o</b>r <b>modu</b>les <b>t</b>o <b>han</b>dle <b>pa</b>rts <b>o</b>f <b>th</b>e <b>co</b>de.<br>
+<br>
+<b>Do</b>n’t <b>ma</b>ke <b>assump</b>tions<br>
+<br>
+<b>Wh</b>en <b>writ</b>ing <b>co</b>de, <b>yo</b>u <b>ar</b>e <b>alw</b>ays <b>fa</b>ced <b>wi</b>th a <b>ques</b>tion <b>th</b>at <b>ha</b>s <b>ve</b>ry <b>of</b>ten <b>t</b>o <b>ha</b>ve a <b>sim</b>ple <b>ans</b>wer – <b>whet</b>her <b>t</b>o <b>us</b>e <b>“i</b>f <b>th</b>is <b>=</b>= <b>th</b>at” <b>o</b>r <b>“i</b>f <b>th</b>is <b>i</b>s a <b>pa</b>rt <b>o</b>f <b>th</b>e <b>co</b>de <b>th</b>at <b>thi</b>s”. <b>Bu</b>t <b>mo</b>st <b>progra</b>mmers, <b>espec</b>ially <b>fr</b>ont <b>en</b>d <b>develo</b>pers, <b>te</b>nd <b>t</b>o <b>se</b>e <b>th</b>is <b>a</b>s a <b>prob</b>lem.<br>
+<br>
+A <b>lo</b>t <b>o</b>f <b>ti</b>mes <b>w</b>e <b>wi</b>ll <b>ma</b>ke a <b>mist</b>ake, <b>an</b>d <b>th</b>en, <b>th</b>e <b>ques</b>tion <b>“ca</b>n’t <b>w</b>e <b>d</b>o <b>i</b>t <b>th</b>is <b>wa</b>y” <b>wi</b>ll <b>alw</b>ays <b>po</b>p <b>ou</b>t <b>o</b>f <b>ou</b>r <b>mi</b>nd. <b>Th</b>is <b>i</b>s <b>on</b>e <b>o</b>f <b>th</b>e <b>ma</b>in <b>reas</b>ons <b>wh</b>y <b>peo</b>ple <b>cho</b>ose <b>we</b>b <b>applic</b>ations <b>an</b>d <b>fr</b>ont <b>en</b>d <b>develo</b>pment, <b>beca</b>use <b>wh</b>en <b>desi</b>gning a <b>we</b>b <b>applic</b>ation, <b>th</b>ey <b>te</b>nd <b>t</b>o <b>ass</b>ume <b>th</b>at <b>i</b>t <b>wi</b>ll <b>ha</b>ve a <b>“cle</b>an” <b>co</b>de.<br>
+<br>
+<b>Yo</b>u <b>shou</b>ldn’t <b>ass</b>ume <b>anyt</b>hing. <b>Yo</b>ur <b>be</b>st <b>be</b>t <b>i</b>s <b>alw</b>ays <b>t</b>o <b>le</b>arn <b>fr</b>om <b>th</b>e <b>fr</b>ont <b>en</b>d <b>an</b>d <b>th</b>e <b>cli</b>ent <b>a</b>s <b>mu</b>ch <b>a</b>s <b>poss</b>ible, <b>an</b>d <b>t</b>o <b>te</b>st <b>th</b>e <b>prod</b>uct <b>a</b>s <b>mu</b>ch <b>a</b>s <b>poss</b>ible, <b>bef</b>ore <b>depl</b>oying <b>i</b>t <b>t</b>o <b>th</b>e <b>use</b>rs.<br>
+<br>
+<b>B</b>e <b>a</b>s <b>thor</b>ough <b>a</b>s <b>poss</b>ible<br>
+<br>
+A <b>co</b>de <b>rev</b>iew <b>i</b>s <b>on</b>e <b>o</b>f <b>th</b>e <b>mo</b>st <b>impo</b>rtant <b>activ</b>ities <b>yo</b>u <b>ca</b>n <b>do</b>. <b>Th</b>is <b>i</b>s <b>ju</b>st <b>on</b>e <b>o</b>f <b>th</b>e <b>activ</b>ities <b>o</b>f <b>yo</b>ur <b>da</b>ily <b>wo</b>rk, <b>bu</b>t <b>on</b>e <b>o</b>f <b>th</b>e <b>mo</b>st <b>impo</b>rtant <b>activ</b>ities <b>o</b>f <b>yo</b>ur <b>li</b>fe – <b>an</b>d, <b>a</b>s a <b>fr</b>ont <b>en</b>d <b>devel</b>oper, <b>yo</b>ur <b>ma</b>in <b>respons</b>ibility <b>i</b>s <b>t</b>o <b>ens</b>ure <b>th</b>at <b>th</b>e <b>co</b>de <b>yo</b>u <b>wr</b>ite <b>me</b>ets <b>yo</b>ur <b>stan</b>dards <b>an</b>d <b>expect</b>ations, <b>th</b>at <b>it</b>’s <b>mainta</b>inable, <b>an</b>d <b>th</b>at <b>th</b>e <b>co</b>de <b>i</b>s <b>read</b>able.<br>
+<br>
+<b>Wh</b>en <b>yo</b>u <b>co</b>de <b>it</b>, <b>you</b>’re <b>go</b>ing <b>t</b>o <b>cre</b>ate <b>bu</b>gs. <b>Th</b>e <b>ke</b>y <b>th</b>ing <b>t</b>o <b>reme</b>mber <b>i</b>s <b>t</b>o <b>b</b>e <b>a</b>s <b>prec</b>ise <b>a</b>s <b>poss</b>ible <b>i</b>n <b>yo</b>ur <b>cod</b>ing – <b>t</b>o <b>mini</b>mize <b>th</b>e <b>probab</b>ility <b>th</b>at <b>yo</b>ur <b>co</b>de <b>do</b>es <b>no</b>t <b>comp</b>ile.<br>
+<br>
+<b>Ma</b>ke <b>al</b>l <b>co</b>de <b>chan</b>ges<br>
+<br>
+<b>On</b>e <b>o</b>f <b>th</b>e <b>mo</b>st <b>impo</b>rtant <b>rul</b>es, <b>t</b>o <b>he</b>lp <b>co</b>de <b>blo</b>at, <b>i</b>s <b>no</b>t <b>t</b>o <b>ma</b>ke <b>to</b>o <b>ma</b>ny <b>chan</b>ges <b>a</b>t <b>on</b>ce – <b>espec</b>ially <b>af</b>ter <b>you</b>’re <b>gett</b>ing <b>some</b>thing <b>work</b>ing.<br>
+<br>
+<b>I</b>n <b>gene</b>ral, <b>th</b>e <b>soo</b>ner <b>yo</b>u <b>st</b>art <b>work</b>ing <b>o</b>n <b>an</b>y <b>co</b>de, <b>th</b>e <b>mo</b>re <b>lik</b>ely <b>i</b>t <b>i</b>s <b>t</b>o <b>ru</b>n <b>smoo</b>thly – <b>an</b>d <b>th</b>e <b>mo</b>re <b>lik</b>ely <b>i</b>t <b>i</b>s <b>th</b>at <b>yo</b>ur <b>co</b>de <b>wi</b>ll <b>b</b>e <b>mo</b>re <b>read</b>able <b>th</b>is <b>wa</b>y.<br>
+<br>
+<b>I</b>n <b>or</b>der <b>t</b>o <b>impr</b>ove <b>co</b>de, <b>ma</b>ke <b>your</b>self <b>fami</b>liar <b>wi</b>th <b>th</b>e <b>sys</b>tem <b>i</b>t <b>wo</b>rks <b>on</b>, <b>an</b>d <b>bu</b>ild <b>th</b>e <b>co</b>de <b>up</b>on <b>well-t</b>ested <b>obje</b>cts <b>an</b>d <b>func</b>tions <b>un</b>til <b>th</b>e <b>prog</b>ram <b>i</b>s <b>mo</b>re <b>refi</b>ned <b>an</b>d <b>eas</b>ier <b>t</b>o <b>chan</b>ge.<br>
+<br>
+<b>I</b>f <b>you</b>’re <b>work</b>ing <b>o</b>n a <b>la</b>rge <b>co</b>de <b>ba</b>se, <b>ta</b>ke a <b>lo</b>ok <b>a</b>t <b>yo</b>ur <b>exis</b>ting <b>co</b>de <b>an</b>d <b>rew</b>ork <b>th</b>e <b>sect</b>ions, <b>th</b>at <b>alre</b>ady <b>ha</b>ve a <b>well-d</b>efined <b>stru</b>cture <b>aro</b>und <b>it</b>.<br>
+<br>
+<b>Te</b>st <b>co</b>de <b>thoro</b>ughly<br>
+<br>
+<b>Test</b>ing <b>i</b>s <b>li</b>ke <b>mak</b>ing <b>su</b>re <b>yo</b>ur <b>prod</b>uct <b>wo</b>rks <b>an</b>d <b>it</b>’s <b>sta</b>ble <b>pr</b>ior <b>t</b>o <b>publi</b>shing <b>i</b>t <b>t</b>o <b>th</b>e <b>mark</b>et.<br>
+<br>
+<b>Al</b>l <b>yo</b>ur <b>co</b>de <b>ne</b>eds <b>t</b>o <b>b</b>e <b>tes</b>ted <b>fo</b>r <b>stabi</b>lity, <b>a</b>s <b>we</b>ll <b>a</b>s <b>t</b>o <b>ma</b>ke <b>su</b>re <b>th</b>at <b>al</b>l <b>o</b>f <b>th</b>e <b>pa</b>rts <b>o</b>f <b>th</b>e <b>co</b>de <b>ar</b>e <b>functi</b>oning <b>prop</b>erly.<br>
+<br>
+<b>Wh</b>en <b>al</b>l <b>i</b>s <b>do</b>ne <b>an</b>d <b>yo</b>u <b>kn</b>ow <b>th</b>at a <b>te</b>st <b>i</b>s <b>prop</b>erly <b>do</b>ne, <b>th</b>en <b>yo</b>u <b>ca</b>n <b>dep</b>loy <b>th</b>e <b>co</b>de <b>you</b>’re <b>work</b>ing <b>o</b>n <b>t</b>o <b>th</b>e <b>us</b>ers <b>with</b>out <b>an</b>y <b>issu</b>es.<br>
+<br>
+<b>Do</b>n’t <b>us</b>e <b>comm</b>ents <b>t</b>o <b>conf</b>use <b>co</b>de<br>
+<br>
+A <b>lo</b>t <b>o</b>f <b>begi</b>nners <b>te</b>nd <b>t</b>o <b>fi</b>nd <b>ma</b>ny <b>tri</b>cks <b>t</b>o <b>red</b>uce <b>th</b>e <b>ti</b>me <b>i</b>t <b>ta</b>kes <b>t</b>o <b>wr</b>ite <b>co</b>de, <b>t</b>o <b>ma</b>ke <b>i</b>t <b>eas</b>ier <b>t</b>o <b>re</b>ad <b>an</b>d <b>unders</b>tand.<br>
+<br>
+<b>They</b>’re <b>no</b>t <b>on</b>ly <b>use</b>ful <b>i</b>n <b>writ</b>ing <b>co</b>de, <b>bu</b>t <b>ca</b>n <b>al</b>so <b>b</b>e <b>ve</b>ry <b>help</b>ful <b>i</b>n <b>mak</b>ing a <b>co</b>de <b>underst</b>andable <b>an</b>d <b>eas</b>ier <b>t</b>o <b>re</b>ad <b>a</b>s <b>yo</b>u <b>mo</b>ve <b>thro</b>ugh <b>yo</b>ur <b>co</b>de.<br>
+<br>
+<b>Bu</b>t <b>wh</b>at <b>yo</b>u <b>ne</b>ed <b>t</b>o <b>real</b>ize <b>i</b>s <b>th</b>at <b>comm</b>ents <b>he</b>lp <b>yo</b>u <b>t</b>o <b>av</b>oid <b>co</b>de <b>blo</b>at.<br>
+<br>
+<b>Ju</b>st <b>li</b>ke <b>yo</b>u <b>do</b>n’t <b>ne</b>ed <b>t</b>o <b>us</b>e <b>comm</b>ents <b>wh</b>en <b>writ</b>ing <b>co</b>de, <b>it</b>’s a <b>mist</b>ake <b>t</b>o <b>us</b>e <b>th</b>em <b>wh</b>en <b>refact</b>oring.<br>
+<br>
+<b>He</b>re <b>ar</b>e <b>so</b>me <b>exam</b>ples <b>o</b>f <b>be</b>st <b>prac</b>tices <b>t</b>o <b>cons</b>ider <b>wh</b>en <b>writ</b>ing <b>pyt</b>hon <b>co</b>de:<br>
+<br>
+<b>Av</b>oid <b>th</b>e <b>us</b>e <b>o</b>f <b>comm</b>ents <b>t</b>o <b>conf</b>use <b>thin</b>gs.<br>
+<br>
+<b>Us</b>e <b>indent</b>ation <b>th</b>at <b>i</b>s <b>a</b>t a <b>consi</b>stent <b>lev</b>el.<br>
+<br>
+<b>Alw</b>ays <b>b</b>e <b>logi</b>cal <b>wh</b>en <b>yo</b>u <b>wr</b>ite <b>comm</b>ents, <b>an</b>d <b>ma</b>ke <b>su</b>re <b>t</b>o <b>gr</b>oup <b>th</b>em <b>wi</b>th <b>approp</b>riate <b>const</b>ructs <b>ju</b>st <b>t</b>o <b>ma</b>ke <b>yo</b>ur <b>co</b>de <b>mo</b>re <b>read</b>able.<br>
+<br>
+<b>Alw</b>ays <b>wr</b>ite <b>comm</b>ents <b>i</b>n <b>th</b>e <b>foll</b>owing <b>form</b>at:<br>
+<br>
+<b>Func</b>tion <b>(func</b>tion) <b>Na</b>me <b>(func</b>tion) <b>Descri</b>ption <b>[i</b>f <b>(condi</b>tion) <b>state</b>ment]<br>
+<br>
+<b>An</b>d <b>reme</b>mber <b>th</b>at <b>yo</b>ur <b>comm</b>ents <b>sho</b>uld <b>b</b>e <b>writ</b>ten <b>us</b>ing a <b>“Pyt</b>hon <b>styl</b>e”. <b>Th</b>is <b>me</b>ans <b>th</b>at <b>yo</b>ur <b>comm</b>ents <b>sho</b>uld <b>cons</b>ist <b>o</b>f <b>bo</b>th <b>th</b>e <b>funct</b>ion’s <b>na</b>me <b>an</b>d <b>descri</b>ption <b>an</b>d <b>th</b>e <b>if-stat</b>ements.<br>
+<br>
+<b>Th</b>e <b>mo</b>st <b>impo</b>rtant <b>th</b>ing <b>i</b>s <b>t</b>o <b>ens</b>ure <b>th</b>at <b>wh</b>en <b>yo</b>u <b>wr</b>ite a <b>comm</b>ent, <b>it</b>’s <b>read</b>able <b>an</b>d <b>no</b>t <b>ju</b>st <b>fo</b>r <b>sh</b>ow – <b>yo</b>u <b>sho</b>uld <b>us</b>e <b>i</b>t <b>i</b>n <b>th</b>e <b>se</b>nse <b>th</b>at <b>it</b>’s a <b>comm</b>ent <b>an</b>d <b>ma</b>ke <b>i</b>t a <b>pa</b>rt <b>o</b>f <b>yo</b>ur <b>co</b>de.<br>
+
+</p>
+</body>
+</html>

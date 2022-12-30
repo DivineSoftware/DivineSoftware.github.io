@@ -1,0 +1,27 @@
+/*
+Theme Name: Firwl
+Theme URI: http://qantumthemes.xyz/
+Author: QantumThemes
+Author URI: https://themeforest.net/user/qantumthemes
+Description: Cyber Security WordPress theme
+Version: 1.2.4
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: firwl
+Domain Path: /languages/
+Tags: two-columns, right-sidebar
+*/
+
+/**
+ * ================================================================================================
+ * 
+ *
+ *	INFO FOR DEVELOPERS:
+ *	This file is empty. The main css file is in ./css
+ *	Main CSS: 			./css/style.css
+ *	Main CSS min:		./css/style-min.css
+ * 	It is not recommended to add CSS here, instead, use the child theme and add your styles to that.
+ *
+ *
+ * ================================================================================================
+ */
